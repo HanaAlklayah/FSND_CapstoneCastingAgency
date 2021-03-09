@@ -5,7 +5,7 @@ from app import create_app
 from flask_sqlalchemy import SQLAlchemy
 from models import setup_db, Movies, Actors
 
-'''
+
 Assistant = {
 'Content-Type': 'application/json',
 'Authorization': os.environ['ASSISTANT_TOKEN']
@@ -18,7 +18,7 @@ Executive = {
 'Content-Type': 'application/json',
 'Authorization': os.environ['PRODUCER_TOKEN']
 }
-'''
+
 
 class CapstoneTest(unittest.TestCase):
     def setUp(self):

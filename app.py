@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -50,7 +51,7 @@ def create_app(test_config=None):
     @requires_auth('post:movies')
     def post_movie(jwt):
         body = request.get_json()
-
+        #body = json.dumps(body)
         if body is None:
             abort(422)
 
@@ -71,12 +72,39 @@ def create_app(test_config=None):
     @app.route('/movies/<int:id>', methods=['PATCH'])
     @requires_auth('patch:movies')
     def update_movie(self, id):
+
+        try:
+            movie = Movies.query.get(id)
+
+            if not movie:
+                abort(400)
+
+            title = json_data_input('title')
+            release_date = json_data_input('release_date')
+
+            movie.title = title
+            movie.release_date = release_date
+
+            updated_movie = Movies(title, release_date)
+
+            updated_movie.update()
+
+            return jsonify({
+                "success": True,
+                "message": "update successfull",
+                "movie details changed to ": updated_movie.format()
+            })
+        except Exception:
+            abort(422)    
+        
+        '''
         body = request.get_json()
+        #body = json.dumps(body)
 
         if body is None:
-            abort(422)
-
-        movie = Movies.query.get(id)
+            abort(422)       
+        
+        movie = Movies.query.get(id) 
 
         if movie is None:
             abort(404)
@@ -95,7 +123,7 @@ def create_app(test_config=None):
             'success': True,
             'movie': movie.format()
         })
-
+        '''
     @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
     def delete_movie(self, id):

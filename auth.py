@@ -4,17 +4,26 @@ from flask import request, _request_ctx_stack
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
-from flask import  abort
+from flask import abort
 
-AUTH0_DOMAIN='ihana.us.auth0.com'
-API_AUDIENCE='capstone1'
-ALGORITHMS=['RS256']
 
+AUTH0_DOMAIN = 'ihana.us.auth0.com'
+API_AUDIENCE = 'capstone1'
+ALGORITHMS = ['RS256']
+
+
+'''
+## A certificate error occurs
+AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
+ALGORITHMS = os.environ.get('ALGORITHMS')
+API_AUDIENCE = os.environ.get('API_AUDIENCE')
+'''
 
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
+
 
 def get_token_auth_header():
     if 'Authorization' not in request.headers:
@@ -37,6 +46,7 @@ def get_token_auth_header():
 
     return header_parts[1]
 
+
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
         raise AuthError({
@@ -50,6 +60,7 @@ def check_permissions(permission, payload):
             'description': 'Permission not found.'
         }, 403)
     return True
+
 
 def verify_decode_jwt(token):
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
@@ -101,6 +112,11 @@ def verify_decode_jwt(token):
                 'code': 'invalid_header',
                 'description': 'Unable to parse authentication token.'
             }, 400)
+    raise AuthError({
+        'code': 'invalid_header',
+        'description': 'Unable to find the appropriate key.'
+    }, 400)
+
 
 def requires_auth(permission=''):
     def requires_auth_decorator(f):
@@ -109,7 +125,6 @@ def requires_auth(permission=''):
             token = get_token_auth_header()
             payload = verify_decode_jwt(token)
             check_permissions(permission, payload)
-            return f(payload, *args, **kwargs)
-
+            return f(payload, *args, **kwargs)    
         return wrapper
     return requires_auth_decorator

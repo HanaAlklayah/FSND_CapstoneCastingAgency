@@ -1,11 +1,19 @@
 import os
 import json
-from flask import Flask, request, abort, jsonify
+from flask import (
+    Flask, 
+    request, 
+    abort, 
+    jsonify
+    )
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models import setup_db, Movies, Actors, db
 from auth import AuthError, requires_auth
+import sys
+
+
 
 def create_app(test_config=None):
     app = Flask(__name__)
@@ -16,12 +24,11 @@ def create_app(test_config=None):
 
     CORS(app, resources={'/': {'origins': '*'}})
 
-
     @app.route('/')
     def welcome():
-      return 'Welcome to casting agency'
+        return 'Welcome to casting agency'
 
-    #----------------- Movies ----------------#  
+    #----------------- Movies ----------------#
 
     @app.route('/movies')
     @requires_auth('get:movies')
@@ -50,24 +57,24 @@ def create_app(test_config=None):
     @app.route('/movies', methods=['POST'])
     @requires_auth('post:movies')
     def post_movie(jwt):
-        body = request.get_json()
-        #body = json.dumps(body)
-        if body is None:
-            abort(422)
 
-        title = body.get('title')
-        release_date = body.get('release_date')
+        data = request.get_json()
+        title = data.get('title', None)
+        release_date = data.get('release_date', None)
 
-        if not title or not release_date:
-            abort(422)
+        if title is None or release_date is None:
+            abort(400)
 
-        movie = Movies(title, release_date)
-        movie.insert()
+        movie = Movies(title=title, release_date=release_date)
 
-        return jsonify({
-            'success': True,
-            'created_id': movie.id
-        })
+        try:
+            movie.insert()
+            return jsonify({
+                'success': True,
+                'movie': movie.format()
+            }), 201
+        except Exception:
+            abort(500)
 
     @app.route('/movies/<int:id>', methods=['PATCH'])
     @requires_auth('patch:movies')
@@ -77,8 +84,9 @@ def create_app(test_config=None):
             movie = Movies.query.get(id)
 
             if not movie:
+                print(sys.exc_info())
                 abort(400)
-
+                
             title = json_data_input('title')
             release_date = json_data_input('release_date')
 
@@ -95,16 +103,17 @@ def create_app(test_config=None):
                 "movie details changed to ": updated_movie.format()
             })
         except Exception:
-            abort(422)    
-        
+            print(sys.exc_info())
+            abort(422)
+
         '''
         body = request.get_json()
         #body = json.dumps(body)
 
         if body is None:
-            abort(422)       
-        
-        movie = Movies.query.get(id) 
+            abort(422)
+
+        movie = Movies.query.get(id)
 
         if movie is None:
             abort(404)
@@ -168,25 +177,24 @@ def create_app(test_config=None):
     @app.route('/actors', methods=['POST'])
     @requires_auth('post:actors')
     def add_actor(self):
-        body = request.get_json()
+        data = request.get_json()
+        name = data.get('name', None)
+        age = data.get('age', None)
+        gender = data.get('gender', None)
 
-        if body is None:
-            abort(422)
+        if name is None or age is None or gender:
+            abort(400)
 
-        name = body.get('name')
-        age = body.get('age')
-        gender = body.get('gender')
+        actor = Actors(name=name, age=age, gender=gender)
 
-        if not name or not age or not gender:
-            abort(422)
-
-        actor = Actor(name, age, gender)
-        actor.insert()
-
-        return jsonify({
-            'success': True,
-            'created_id': Actors.id
-        })
+        try:
+            actor.insert()
+            return jsonify({
+                'success': True,
+                'actor': actor.format()
+            }), 201
+        except Exception:
+            abort(500)
 
     @app.route('/actors/<int:id>', methods=['PATCH'])
     @requires_auth('patch:actors')
@@ -274,7 +282,8 @@ def create_app(test_config=None):
 
     return app
 
+
 app = create_app()
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)

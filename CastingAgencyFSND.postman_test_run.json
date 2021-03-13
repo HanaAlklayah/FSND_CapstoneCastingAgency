@@ -1,10 +1,10 @@
 {
-	"id": "1d5339ff-f638-4820-8f6d-3544c80d1e34",
+	"id": "97905ac9-ad22-4ba6-9f97-c92771a9541e",
 	"name": "CastingAgencyFSND",
-	"timestamp": "2021-03-09T02:11:52.572Z",
+	"timestamp": "2021-03-13T01:01:31.402Z",
 	"collection_id": "5f7f1951-a873-4570-af03-006be3863c2f",
 	"folder_id": 0,
-	"environment_id": "6e3c25cf-caf9-4421-817e-b1c0e1008e3f",
+	"environment_id": "7ad79ed2-2de2-4011-b1e5-9f280080b1d0",
 	"totalPass": 0,
 	"totalFail": 0,
 	"results": [
@@ -12,7 +12,7 @@
 			"id": "e65a587c-2d79-4db2-baac-ee8ef18ee14c",
 			"name": "/movies",
 			"url": "http://localhost:8080/movies",
-			"time": 703,
+			"time": 1392,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -20,7 +20,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				703
+				1392
 			],
 			"allTests": [
 				{}
@@ -30,7 +30,7 @@
 			"id": "5eb679ca-c52f-491e-9cbf-0b0af2108835",
 			"name": "/movies/id",
 			"url": "http://localhost:8080/movies/2",
-			"time": 484,
+			"time": 740,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -38,7 +38,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				484
+				740
 			],
 			"allTests": [
 				{}
@@ -48,7 +48,7 @@
 			"id": "49ce379a-3d98-47cc-8e91-37f501520f06",
 			"name": "/actors",
 			"url": "http://localhost:8080/actors",
-			"time": 815,
+			"time": 493,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -56,7 +56,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				815
+				493
 			],
 			"allTests": [
 				{}
@@ -66,7 +66,7 @@
 			"id": "5f7f6981-df3c-46d2-a881-f91939d2e51c",
 			"name": "/actors/id",
 			"url": "http://localhost:8080/actors/2",
-			"time": 537,
+			"time": 530,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -74,7 +74,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				537
+				530
 			],
 			"allTests": [
 				{}
@@ -84,7 +84,7 @@
 			"id": "630d9196-3fc4-4867-9c0b-9855ddf26548",
 			"name": "/movies",
 			"url": "http://localhost:8080/movies",
-			"time": 655,
+			"time": 513,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -92,7 +92,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				655
+				513
 			],
 			"allTests": [
 				{}
@@ -102,7 +102,7 @@
 			"id": "543aafe3-e0a8-4968-8fb0-2e0250aa3dce",
 			"name": "/movies/id",
 			"url": "http://localhost:8080/movies/2",
-			"time": 842,
+			"time": 540,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -110,7 +110,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				842
+				540
 			],
 			"allTests": [
 				{}
@@ -120,7 +120,7 @@
 			"id": "04f07e6e-9052-46f1-b3f8-6d3873969113",
 			"name": "/actors",
 			"url": "http://localhost:8080/actors",
-			"time": 516,
+			"time": 528,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -128,7 +128,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				516
+				528
 			],
 			"allTests": [
 				{}
@@ -138,7 +138,7 @@
 			"id": "bc54d00c-0429-4d56-9d9f-1de82a8a10f5",
 			"name": "/actors/id",
 			"url": "http://localhost:8080/actors/2",
-			"time": 514,
+			"time": 530,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -146,7 +146,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				514
+				530
 			],
 			"allTests": [
 				{}
@@ -156,7 +156,7 @@
 			"id": "165f1bae-60c3-4d16-aea2-97748d20968f",
 			"name": "/actors/id",
 			"url": "http://localhost:8080/actors/2",
-			"time": 452,
+			"time": 487,
 			"responseCode": {
 				"code": 422,
 				"name": "UNPROCESSABLE ENTITY"
@@ -164,7 +164,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				452
+				487
 			],
 			"allTests": [
 				{}
@@ -174,7 +174,7 @@
 			"id": "584c5119-195a-49fb-b78b-2b71972961f7",
 			"name": "/movies/id",
 			"url": "http://localhost:8080/movies/2",
-			"time": 473,
+			"time": 540,
 			"responseCode": {
 				"code": 422,
 				"name": "UNPROCESSABLE ENTITY"
@@ -182,7 +182,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				473
+				540
 			],
 			"allTests": [
 				{}
@@ -192,15 +192,15 @@
 			"id": "00648d3e-41eb-4545-945a-1b46899c91b3",
 			"name": "/actors",
 			"url": "http://localhost:8080/actors",
-			"time": 524,
+			"time": 507,
 			"responseCode": {
-				"code": 422,
-				"name": "UNPROCESSABLE ENTITY"
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
 			},
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				524
+				507
 			],
 			"allTests": [
 				{}
@@ -210,7 +210,7 @@
 			"id": "38cc379a-64f4-4519-a9b0-e0097e85eea3",
 			"name": "/actors/id",
 			"url": "http://localhost:8080/actors/1",
-			"time": 471,
+			"time": 1203,
 			"responseCode": {
 				"code": 404,
 				"name": "NOT FOUND"
@@ -218,7 +218,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				471
+				1203
 			],
 			"allTests": [
 				{}
@@ -228,7 +228,7 @@
 			"id": "2d5a92f1-131d-435e-b49d-7a241aa6f3d5",
 			"name": "/movies",
 			"url": "http://localhost:8080/movies",
-			"time": 476,
+			"time": 540,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -236,7 +236,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				476
+				540
 			],
 			"allTests": [
 				{}
@@ -246,78 +246,6 @@
 			"id": "53396899-ede6-416f-9d22-9986e9e5a7cb",
 			"name": "/movies/1",
 			"url": "http://localhost:8080/movies/2%0A",
-			"time": 471,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				471
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "fc26849c-2286-4317-989e-2d0a9374ab04",
-			"name": "/movies",
-			"url": "http://localhost:8080/movies",
-			"time": 481,
-			"responseCode": {
-				"code": 422,
-				"name": "UNPROCESSABLE ENTITY"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				481
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "12986adc-d930-46ca-8e3c-1c74566fcc6a",
-			"name": "/movies/1",
-			"url": "http://localhost:8080/movies/2",
-			"time": 463,
-			"responseCode": {
-				"code": 422,
-				"name": "UNPROCESSABLE ENTITY"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				463
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "6474dd56-505c-436c-a3b7-b5ae7a1da4bb",
-			"name": "/movies",
-			"url": "http://0.0.0.0:8080/movies/1",
-			"time": 504,
-			"responseCode": {
-				"code": 404,
-				"name": "NOT FOUND"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				504
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "edb9161f-27aa-4c85-be88-665872e8502a",
-			"name": "actors",
-			"url": "http://localhost:8080/actors",
 			"time": 514,
 			"responseCode": {
 				"code": 200,
@@ -333,10 +261,64 @@
 			]
 		},
 		{
-			"id": "039d528f-007a-4673-bae1-23873dff0e86",
-			"name": "actors/1",
-			"url": "http://localhost:8080/actors/2",
-			"time": 508,
+			"id": "fc26849c-2286-4317-989e-2d0a9374ab04",
+			"name": "/movies",
+			"url": "http://localhost:8080/movies",
+			"time": 538,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				538
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "12986adc-d930-46ca-8e3c-1c74566fcc6a",
+			"name": "/movies/1",
+			"url": "http://localhost:8080/movies/2",
+			"time": 540,
+			"responseCode": {
+				"code": 422,
+				"name": "UNPROCESSABLE ENTITY"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				540
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6474dd56-505c-436c-a3b7-b5ae7a1da4bb",
+			"name": "/movies",
+			"url": "http://0.0.0.0:8080/movies/1",
+			"time": 527,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				527
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "edb9161f-27aa-4c85-be88-665872e8502a",
+			"name": "actors",
+			"url": "http://localhost:8080/actors",
+			"time": 499,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -344,7 +326,25 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				508
+				499
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "039d528f-007a-4673-bae1-23873dff0e86",
+			"name": "actors/1",
+			"url": "http://localhost:8080/actors/2",
+			"time": 545,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				545
 			],
 			"allTests": [
 				{}
@@ -354,15 +354,15 @@
 			"id": "3c5b8cda-c441-4604-8d94-c58b7f780761",
 			"name": "actors",
 			"url": "http://localhost:8080/actors",
-			"time": 477,
+			"time": 500,
 			"responseCode": {
-				"code": 422,
-				"name": "UNPROCESSABLE ENTITY"
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
 			},
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				477
+				500
 			],
 			"allTests": [
 				{}
@@ -372,7 +372,7 @@
 			"id": "7165278e-7f33-41c8-8b3a-decd1e746d0b",
 			"name": "actors/1",
 			"url": "http://localhost:8080/actors/3",
-			"time": 561,
+			"time": 1221,
 			"responseCode": {
 				"code": 422,
 				"name": "UNPROCESSABLE ENTITY"
@@ -380,7 +380,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				561
+				1221
 			],
 			"allTests": [
 				{}
@@ -390,7 +390,7 @@
 			"id": "cec94152-6249-44ca-8fc5-fb0c6b7ef2cd",
 			"name": "actors/1",
 			"url": "http://localhost:8080/actors/1",
-			"time": 460,
+			"time": 505,
 			"responseCode": {
 				"code": 404,
 				"name": "NOT FOUND"
@@ -398,7 +398,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				460
+				505
 			],
 			"allTests": [
 				{}
@@ -406,7 +406,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 11901,
+	"totalTime": 13932,
 	"collection": {
 		"requests": [
 			{
